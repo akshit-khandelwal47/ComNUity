@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Home</title>
+    <style>
+      /* body {
+    background: rgb(111, 129, 123); 
+    
+} */
+
+      section{
+        padding: 100px 0;
+    }
+    .details-card {
+      background: #ecf0f1;
+    }
+    
+    .card-content {
+      background: #ffffff;
+      border: 4px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    }
+    
+    .card-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      z-index: 1;
+    }
+    
+    .card-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .card-img span {
+      position: absolute;
+        top: 15%;
+        left: 12%;
+        background: #1ABC9C;
+        padding: 6px;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transform: translate(-50%,-50%);
+    }
+    .card-img span h4{
+            font-size: 12px;
+            margin:0;
+            padding:10px 5px;
+             line-height: 0;
+    }
+    .card-desc {
+      padding: 1.25rem;
+    }
+    
+    .card-desc h3 {
+      color: #000000;
+        font-weight: 600;
+        font-size: 1.5em;
+        line-height: 1.3em;
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+    
+    .card-desc p {
+      color: #747373;
+        font-size: 14px;
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 1.5;
+      margin: 0px;
+      margin-bottom: 20px;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+    }
+    .btn-card{
+      background-color: #1ABC9C;
+      color: #fff;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        padding: .84rem 2.14rem;
+        font-size: .81rem;
+        -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        margin: 0;
+        border: 0;
+        -webkit-border-radius: .125rem;
+        border-radius: .125rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        white-space: normal;
+        word-wrap: break-word;
+        color: #fff;
+    }
+    .btn-card:hover {
+        background: orange;
+    } 
+    a.btn-card {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .header img {
+    float: left;
+    width: 100px;
+    height: 95px;
+    background: #555;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+  } 
+
+  .header button {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+  } 
+    </style>
+     
+  </head>
+  <body>
+
+    <!-- <script>
+      var classname = document.getElementsByClassName("btn-card");
+    var count =1;
+    var setColor = function() {
+        var button = this;
+        if (count == 0) {
+            button.style.backgroundColor = this.getAttribute("data-color");
+            console.log(this.getAttribute("data-color"))
+            count = 1;        
+        }
+        else {
+            button.style.backgroundColor = this.getAttribute("data-color");
+             console.log(this.getAttribute("data-color"))
+            count = 0;
+        }
+    };
+
+    for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', setColor, false);
+    }
+
+    </script> -->
+
+    <script>
+      window.addEventListener('popstate', function(event)
+      {
+          alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+      });    </script>
+
+    <div class="header" style="background-color: black; height: 95px;">
+      <img src="https://i.imgur.com/EFPGTiX.png" alt="logo" />
+      <h1 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: white;"> Select Your Interests</h1>
+      <button type="submit" onclick="location.href='{% url 'log' %}'" class="btn btn-success btn-lg mb-1">Sign out</button>
+      {% comment %} <h6 align="right" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Connect with us!</h6> {% endcomment %}
+    </div>
+    <section class="details-card" style="background-image: url(https://media.istockphoto.com/photos/purple-and-cyan-light-streaks-background-picture-id1335295890?b=1&k=20&m=1335295890&s=170667a&w=0&h=AA6z9_1UWK0sYMllBo5kmbPnAm3SD4VscEtXk1SvYHM=); background-repeat: no-repeat; background-position:center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <div class="container">
+      <form action="/home/" method="post">
+          {% csrf_token %}  
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card-content">
+                      <div class="card-img">
+                          <img src="https://cdn.pixabay.com/photo/2016/05/31/23/21/badminton-1428046__480.jpg" alt="">
+                      </div>
+                      <div class="card-desc">
+                          <h3>Badminton</h3>
+                          <p>Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Join this group for learning more about badminton and its advocates.</p>
+                              <input type="checkbox" class="form-check-input" id="btn-check1" name="activity" value="Badminton">
+                              <label class="btn btn-primary" for="btn-check1">Badminton</label>
+                              <!-- <a href="#" class="btn-card" data-color>Read</a>  -->
+                              <!-- <input type="submit" onchange="" class="btn-card" data-color="#68z2773" value="Science"></input> -->
+                              <!-- <label tabindex="0" class="checkbox">
+                                <input type="checkbox" value="valueofcheckbox" style="display:none"/>Option Text
+                              </label> -->
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card-content">
+                      <div class="card-img">
+                          <img src="https://www.adityabirlacapital.com/healthinsurance/active-together/wp-content/uploads/2018/08/shutterstock_713510194-abchi.jpg" alt="">
+                          
+                      </div>
+                      <div class="card-desc">
+                          <h3>Trekking</h3>
+                          <p>Trekking - or long-distance hiking - consists of walking for several days or several weeks and being entirely or partially self-sufficient. Join this group for learning more about trekking and its advocates. </p>
+                              <!-- <button class="btn-card" data-color="#682773">Science</button>   -->
+                              <input type="checkbox" class="form-check-input" id="btn-check2" name="activity" value="Trekking">
+                              <label class="btn btn-primary" for="btn-check2">Trekking</label>
+                      </div>
+                  </div>
+    
+              </div>
+              <div class="col-md-4">
+                  <div class="card-content">
+                      <div class="card-img">
+                          <img src="https://www.runtastic.com/blog/wp-content/uploads/2018/03/thumbnail_1200x800-7.jpg" alt="">
+                          
+                      </div>
+                      <div class="card-desc">
+                          <h3>Cycling</h3>
+                          <p>Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. Join this group for learning more about cycling and its advocates.</p>
+                              <input type="checkbox" class="form-check-input" id="btn-check3" name="activity" value="Cycling">
+                              <label class="btn btn-primary" for="btn-check3">Cycling</label> 
+                          </div>
+                        </div>
+              </div>
+          </div>
+          </div>
+          <br>
+          <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://images.news18.com/ibnlive/uploads/2022/03/theatre-164835095216x9.jpg" alt="">
+                        
+                    </div>
+                    <div class="card-desc">
+                        <h3>Theatre</h3>
+                        <p>Theatre or theater is a collaborative form of performing art that uses live performers, usually actors or actresses, to present the experience of a real or imagined event before a live audience in a specific place, often a stage. Join this group for learning more about theatre and its advocates. </p>
+                            <input type="checkbox" class="form-check-input" id="btn-check4" autocomplete="off" name="activity" value="Theatre">
+                            <label class="btn btn-primary" for="btn-check4">Theatre</label>
+                            <!-- <a href="#" class="btn-card" data-color>Read</a>  -->
+                            <!-- <input type="submit" onchange="" class="btn-card" data-color="#68z2773" value="Science"></input> -->
+                            <!-- <label tabindex="0" class="checkbox">
+                              <input type="checkbox" value="valueofcheckbox" style="display:none"/>Option Text
+                            </label> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://imageio.forbes.com/specials-images/imageserve/61d66f8dbbb58ffd41f3d174/AI-and-robotics/960x0.jpg?fit=bounds&format=jpg&width=960" alt="">
+                        
+                    </div>
+                    <div class="card-desc">
+                        <h3>Robotics</h3>
+                        <p>Robotics is an interdisciplinary branch of computer science and engineering. Robotics involves design, construction, operation, and use of robots. Join this group for learning more about robotics and its advocates.</p>
+                            <input type="checkbox" class="form-check-input" id="btn-check5" name="activity" value="Robotics">
+                            <label class="btn btn-primary" for="btn-check5" >Robotics</label>
+                            <!-- <button class="btn-card" data-color="#682773">Science</button>   -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://media.istockphoto.com/photos/cricket-batsman-about-to-strike-ball-picture-id180868820?b=1&k=20&m=180868820&s=170667a&w=0&h=SGrEQh0JimF0R8-RFa5pbQSR6FxcoOOa2jv3eax15QQ=" alt="">
+                       
+                    </div>
+                    <div class="card-desc">
+                        <h3>Cricket</h3>
+                        <p>Cricket is a bat-and-ball game played between two teams of eleven players each on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps. Join this group for learning more about robotics and its advocates. </p>
+                            <input type="checkbox" class="form-check-input" id="btn-check6" name="activity" value="Cricket">
+                            <label class="btn btn-primary" for="btn-check6">Cricket</label>   
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+          <br>
+            <div class="card-content">
+              <div class="card-desc">
+              <label for="text">Input Other Interests/Activities</label>
+              <input type="text" class="form-control" id="text" name="extra" placeholder="Enter comma separated values"/>
+              <br>
+              <input type="submit" value="Submit" class="btn btn-primary"> 
+          </div>
+        </div>
+        <br>
+        </div>
+      </form>
+    </div>
+  </section>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
